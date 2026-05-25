@@ -1,35 +1,95 @@
 /* global.css */
 body{
+    background-image: url("../images/blue\ hair.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:center;
     background-color: bisque;
-    padding: 50;
+    margin: 0%;
+    display: flex;
+    flex-direction: column;
+    min-height: 70vh;
     text-align: center;
-    text-transform: uppercase;
+    font-size: larger;
 }
-nav {
+header{
     background-color: bisque;
-    padding: 25;
-}
-nav a{
-    color: aqua;
-    text-decoration: none;
-    text-transform: uppercase;
-    
 }
 h1{
-    margin-bottom: 0%;
-    color: aqua;
+    margin: 0;
+    padding: 20px;
+    color: black;
 }
-/* about page  style*/
-about us{
-    background-color: bisque;
-    padding: 50;
-    text-align: center;
-    text-transform: uppercase;
+nav{
+    padding: 15px;
+}
+nav a{
+    color: black;
+    text-decoration: black;
+    margin-right: 20px;
+}
+nav :hover{
+    background-color: aliceblue;
+}
+/* form psge*/
+.booking-form{
+    width: 200px;
+    margin:25px;
+    padding: 25px;;
+    background-color: purple;
+    border-radius: 20%;
+    box-shadow: 0 5% 12% pink;
 
 }
-/* contact us */
-contact us{
-    background-color: aqua;
-    text-align: center;
-    text-transform: uppercase;
+/*button */
+.booking-form button{
+    width: 20px;
+    padding: 0%;
+    margin-top: 0%;
+    background-color: bisque;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: black;
 }
+/*buttom hover */
+.booking-form button:hover{
+    background-color: pink;
+    transform: scale(1.05);
+}
+/* footer page */
+footer{
+    position: fixed;
+    bottom: 0%;
+    width: 110%;
+    background-color: blue;
+    color: aliceblue;
+    text-align: center;
+    padding: 10px;
+}
+img{
+    border-radius: 2px;
+    border: 5px solid black;
+    box-shadow: 6px 6px 12px black;
+    border-radius: 50%;
+
+}
+img:hover{
+    padding: 10px;
+    background-color: blue;
+}
+img{
+    opacity: 0.7;
+}
+.pic{
+    width: 150px;
+    border-radius: 2px;
+    border: 5x solid black;
+    box-shadow: 6px 6px 12px black;
+    padding: 10px;
+}
+.pic:hover{
+    transform: scale(1.07);
+}
+
