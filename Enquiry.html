@@ -26,16 +26,18 @@
         <section class="content">
         <h2>Enguiry</h2>
     <p>Please fill in the form below:</p>
-    <div class="enquiry-form">
-        <input type="text"
+    <form id="enquiryForm">
+        <div class="enquiry-form">
+        <input type="text" id="name"
         required placeholder="enter name">
-        <input type="email"
+        <input type="email" id="email"
        required placeholder="enter email"> 
-       <textarea required placeholder="your message"></textarea>
-        <button>submit</button>
+       <textarea id="message" placeholder="your message"></textarea>
+        <button type="submit">Submit</button>
+        <div id="erros"></div>
     </div>
-    </section>
     </form>
+    </section>
     <footer>
     <footer class="footer">
         <div class="footer-container">
@@ -57,6 +59,6 @@
     @2026 Dimpho's Hair Salon.All rights reserved
         </div>
  </footer>
-    
+    <script src="script.js"></script>
 </body>
 </html>
