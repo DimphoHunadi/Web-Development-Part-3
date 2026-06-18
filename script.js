@@ -1,26 +1,35 @@
-
-function searchItem(){
-    let searchText=document.getElementById("searchInput").value;
-    if(searchtext===""){
-        document.getElementById("result").innerHTML="please enter something.";
-    }else{
-        document.getElementById("result").innerHTML="you search for:" + searchText;
+const form=document.querySelector('#contact-form');
+const nameInput=document.querySelector('#name');
+const emailInput=document.querySelector('#email');
+const messageInput=document.querySelector('#message');
+const addressInput=document.querySelector('#address');
+form.addEventListener('submit',(event)=> {
+    event.preventDefault();//prevent form submission
+    //check if name is empty
+    if(nameInput.value.trim()===''){
+alert('name field cannot be empty.');
+return;
     }
+//check if email is valid
+if(!isEmailValid(emailInput.value)){
+    alert('Invalid email address.');
+    return;
 }
-const search=document.getElementById('search');
-const items=document.querySelectorAll('#item-list li');
-search.addEventListener('keyup',()=>{
-const term=search.value.toLowerCase();
-items.forEach(item=>{
-    if(item.textContent.toLowerCase().includes(term)){
-        item.classList.remove('hidden');
-    }else{
-        item.classList.add('hidden')
-    }
+//Check if message is empty
+if(messageInput.value.trim()===''){
+    alert('message field cannot be empty.');
+    return;
+}
+//check if address is empty
+if(addressInput.value.trim()===''){
+    alert('address field cannot be empty');
+    return;
+}
+//if all validation pass,submit the form
+alert('form submitted successfully');
+form.submit();
 });
-});
-
-
-
-
-
+function isEmailValid(email){
+    const emailRegex=/^\w+@[a-zA-Z_]+?\.[a-zA-z]{2,3}$/;
+    return emailRegex.test(email);
+}

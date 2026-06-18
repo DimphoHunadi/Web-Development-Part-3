@@ -29,14 +29,24 @@
     <form id="enquiryForm">
         <div class="enquiry-form">
         <input type="text" id="name"
-        required placeholder="enter name">
+        required placeholder="full name">
+        <small id="'nameError"></small>
+        
         <input type="email" id="email"
-       required placeholder="enter email"> 
-       <textarea id="message" placeholder="your message"></textarea>
-        <button type="submit">Submit</button>
-        <div id="erros"></div>
+       required placeholder="Email address">
+       <small id="emailError"></small>
+       
+       <input type="text" id="phone"
+       required placeholder="phone number">
+       <small id="phoneError"></small>
+
+       
+       <textarea id="message" placeholder="Write your enquiry"></textarea>
+       <small for="messageError"></small>
+        <button type="submit">Submit enquiry</button>
+        </form>
+        </div>
     </div>
-    </form>
     </section>
     <footer>
     <footer class="footer">

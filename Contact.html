@@ -30,32 +30,25 @@
         <p>Email:DimphoHunadi280@gmail.com</p>
         <p>phone: 071 305 7187</p>
         <p>Address: Limpopo , Janefurse , South Africa</p>
-    <div class="form-container">
+    <div class="contact-form" id="contact-form">
         <h2>Contact us</h2>
-        <form action="#" method="post">
-             <form id="contactForm" novalidate>
             <div class="form-group">
         <label for="name">Name</label>
-        <input type="text"id="name" name="name" required minlength="3">
-        <span class="error-msg" id="nameError"></span>
+        <input type="text"id="name" name="name" required>
         </div>
         <div class="form-group">
          <label for="email">Email</label>
         <input type="email"id="email"  required>
-        <span class="error-msg" id="emailError"></span>
         </div>
         <div class="form-group">
          <label for="address">Address</label>
-        <input type="address"id="address" name="address" required minlength="5">
-        <span class="error-msg" id="addressError"></span>
+        <input type="address"id="address" name="address"required>
         </div>
         <div class="form-group">
          <label for="Message">Message</label>
-         <textarea id="Message" name="Message" required minlength="10"></textarea>
-         <span class="error-msg" id="messageError"></span>
-    </div>
-    <button type="submit" class="submit-btn">Send Message</button>
-    <div id="erros"></div>
+         <textarea id="Message" name="Message" required></textarea>
+         </div>
+    <button type="submit">Send Message</button>
 </form>
 </div>
 </div>
