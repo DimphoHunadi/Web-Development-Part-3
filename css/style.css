@@ -399,3 +399,68 @@ button{
 button:hover{
     background-color: blue;
 }
+.search-container{
+    max-width: 500px;
+    margin: 30px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#searchForm{
+    display: flex;
+    gap: 10px;
+}
+#searchInput{
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+#searchInput:focus{
+    border-color: palevioletred;
+}
+#searchForm button{
+    padding: 12px 24px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/*--- validation error Message---*/
+.error{
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+    display: none;/* controlled by javaScript*/
+    font-weight: 500;
+}
+/*hair service list*/
+#searchResults{
+    list-style: none;
+    padding: 0;
+    max-width: 500px;
+    margin: 20px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#searchResults>li{
+    padding: 15px;
+    background-color: green;
+    border-bottom: 1px solid black;
+    font-size: 16px;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+#searchResults>li:hover{
+    background-color: blue;
+}
+/*--Navbar(stays completely separate and unaffected)---*/
+.navbar ul{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}

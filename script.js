@@ -211,3 +211,56 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('searchForm');
+    const errorMessage = document.getElementById('errorMessage');
+    const searchInput = document.getElementById('searchInput');
+    const listItems = document.querySelectorAll('.style-item');
+
+    // Hide all items immediately when the page loads
+    if (listItems.length > 0) {
+        listItems.forEach(item => {
+            item.style.display = 'none';
+        });
+    }
+
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop page reload
+            
+            const query = searchInput.value.trim().toLowerCase();
+            
+            // Reset message and hide everything
+            errorMessage.textContent = "";
+            let matchCount = 0;
+
+            // 1. Check if empty
+            if (query === "") {
+                errorMessage.textContent = "Please enter a search term.";
+                listItems.forEach(item => item.style.display = 'none');
+                searchInput.focus();
+                return;
+            }
+
+            // 2. Filter items
+            listItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                
+                if (text.includes(query)) {
+                    item.style.display = 'block'; // Show match
+                    matchCount++;
+                } else {
+                    item.style.display = 'none';  // Hide others
+                }
+            });
+
+            // 3. Display "item unmatched" if nothing was found
+            if (matchCount === 0) {
+                errorMessage.textContent = "item unmatched";
+            }
+        });
+    }
+});
+
+    
+
