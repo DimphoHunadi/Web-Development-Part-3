@@ -261,6 +261,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const errorMessage = document.getElementById('errorMessage');
+    const listItems = document.querySelectorAll('.style-item');
+
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const query = searchInput.value.trim().toLowerCase();
+            errorMessage.textContent = "";
+            let matchCount = 0;
+
+            // If empty, keep all elements hidden and prompt user
+            if (query === "") {
+                listItems.forEach(item => item.style.display = 'none');
+                return;
+            }
+
+            // Evaluate elements dynamically
+            listItems.forEach(item => {
+                if (item.textContent.toLowerCase().includes(query)) {
+                    item.style.display = 'block';
+                    matchCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Instant fallback validation
+            if (matchCount === 0) {
+                errorMessage.textContent = "not found";
+            }
+        });
+    }
+});
 
     
 
