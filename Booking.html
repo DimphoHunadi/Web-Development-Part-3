@@ -28,17 +28,27 @@
     <h2>Book an appointment now</h2>
     <div class="form-container">
         <p class="subtitle">fill up the form below to book an appointment.</p>
-        <form id="bookingForm">
-            <div class="form-box">
-        <input type="text"required placeholder="Names"><br>
-        <input type="Surname"required placeholder="Surname"><br>
-        <input type="email"placeholder="Email"><br>
-        <input type="select service"required placeholder="Service"><br>
-        <input type="Appointment Date"required placeholder="Date"><br>
-        <input type="Booking Time"required placeholder="Time"><br>
-        <button type="submit">submit</button><br>
-    </form>
-    </div>
+        <div class="booking-container">
+            <h2>Book appointment</h2>
+            <form id="bookingForm" novalidate>
+                <div class="form-group">
+                    <label for="full name">Full name</label>
+                    <input type="text" id="fullName" placeholder="full name">
+                    <small class="error-msg">Name is required</small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="text" id="email" placeholder="email name">
+                    <small class="error-msg">Enter a valid email</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="bookingDate">Check-in date</label>
+                    <input type="date" id="bookingDate">
+                    <small class="error-msg">Date must be in the future</small>
+                    </div>
+                    <button type="submit">confirm Booking</button>
+            </form>
+        </div>
     </section>
     
        <footer>

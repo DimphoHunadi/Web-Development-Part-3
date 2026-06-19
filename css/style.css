@@ -268,55 +268,134 @@ img:hover{
     transform: scale(1.05);
     filter: brightness(110%);
     background-color: bisque;
-
 }
-.contact-info{
-    flex: 1;
-    min-width: 300;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px black;
+.contact-section{
+    max-width: 500px;
+    margin:40PX auto;
+    padding: 20PX;
 }
-.contact-info{
+.contact-section h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#contactForm{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#contactForm input,
+#contactForm textarea{
+    padding: 12px;
+    border: 1px solid pink;
+    border-radius: 5px;
     font-size: 16px;
-    color: white;
-    line-height: 1.6;
-    margin-bottom: 15px;
 }
-/* Right side: contact form wrapper */
-.contact-form{
-    flex:1.5;
-    min-width: 300px;
+#contactForm textarea{
+    height: 120px;
+    resize: none;
+}
+#contactForm button{
+    padding: 12px;
+    border: none;
+    background-color: #000;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+#contactForm button:hover{
+    background-color: blue;
+}
+#forMessage{
+    text-align: center;
+    font-weight: bold;
+}
+.enquiry-section{
+    max-width: 500px;
+    margin:40PX auto;
+    padding: 20PX;
+}
+.enquiry-section h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#enquiryForm{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+#enquiryForm input,
+#enquiryForm textarea{
+    padding: 12px;
+    border: 1px solid purple;
+    border-radius: 5px;
+    font-size: 16px;
+}
+#enquiryForm textarea{
+    height: 120px;
+    resize: none;
+}
+#enquiryForm button{
+    padding: 12px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+#enquiryForm button:hover{
+    background-color: blueviolet;
+}
+#formMessage{
+    text-align: center;
+    font-weight: bold;
+}
+.booking-container{
+    background-color: pink;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px brown;
+    box-shadow: 0 4px 14px rgb(24, 3, 3);
+    width: 350;
 }
-.contact-form h2{
-    margin-top: 0;
-    margin-bottom: 25px;
-    font-size: 28px;
-}
-/*form groups & inputs */
 .form-group{
     margin-bottom: 20px;
+    position: relative;
 }
 .form-group label{
     display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
+    margin-bottom: 5px;
+    font-weight: bold;
     color: #000;
-    font-size: 14px;
 }
 .form-group input{
     width: 100%;
-    padding: 12px;
-    border: 1px solid black;
+    padding: 10px;
     border-radius: 4px;
     box-sizing: border-box;
-    transition: 0.3s ease;
 }
-/* input focus state*/
-.form-group input:focus{
-    border-color: #000;
-    outline: none;
+.form-group.success input{
+    border-color: green;
+}
+.error-msg{
+    color: red;
+    font-size: 0.8rem;
+    display: none;
+    margin-top: 5px;
+}
+.form-group.error .error-msg{
+    display: block;
+}
+button{
+    width: 100%;
+    padding: 12px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+button:hover{
+    background-color: blue;
 }
