@@ -295,6 +295,188 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('imageLightbox');
+    const expandedImage = document.getElementById('expandedImage');
+    const closeBtn = document.querySelector('.lightbox-close');
+    
+    // Select all images inside your service grids
+    const galleryImages = document.querySelectorAll('.service-grid img');
+
+    // 1. Listen for a click on any of the service images
+    galleryImages.forEach(img => {
+        img.addEventListener('click', function() {
+            lightbox.style.display = 'flex'; // Display the overlay container
+            expandedImage.src = this.src;    // Clone the clicked image source URL
+            expandedImage.alt = this.alt;    // Clone the alternate text description
+        });
+    });
+
+    // 2. Close the modal when clicking the "X" button
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+        });
+    }
+
+    // 3. Close the modal automatically if the user clicks on the dark backdrop
+    if (lightbox) {
+        lightbox.addEventListener('click', function(event) {
+            if (event.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    }
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = document.getElementById('imageLightbox');
+    const expandedImage = document.getElementById('expandedImage');
+    const closeBtn = document.querySelector('.lightbox-close');
+    
+    // Selects all images inside your service-grid boxes
+    const galleryImages = document.querySelectorAll('.service-grid img');
+
+    console.log("Found " + galleryImages.length + " images to click.");
+
+    galleryImages.forEach(img => {
+        // Force a pointer cursor so you know it's clickable
+        img.style.cursor = 'pointer';
+
+        img.addEventListener('click', function() {
+            console.log("Image clicked! Source: " + this.src);
+            
+            if (lightbox && expandedImage) {
+                // This is the exact line that forces the large popup to show up
+                lightbox.style.setProperty('display', 'flex', 'important');
+                expandedImage.src = this.src;
+                expandedImage.alt = this.alt;
+            } else {
+                console.log("Error: Could not find imageLightbox or expandedImage in your HTML.");
+            }
+        });
+    });
+
+    // Close when clicking 'X'
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+        });
+    }
+
+    // Close when clicking the dark background
+    if (lightbox) {
+        lightbox.addEventListener('click', function(event) {
+            if (event.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    }
+});
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ==========================================
+    // 1. SEARCH BAR VALIDATION & FILTER ENGINE
+    // ==========================================
+    const form = document.getElementById('searchForm');
+    const errorMessage = document.getElementById('errorMessage');
+    const searchInput = document.getElementById('searchInput');
+    const listItems = document.querySelectorAll('.style-item');
+
+    listItems.forEach(item => item.style.display = 'block');
+
+    if (form) {
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            const query = searchInput.value.trim().toLowerCase();
+            errorMessage.textContent = "";
+            let matchCount = 0;
+
+            if (query === "") {
+                errorMessage.textContent = "please search for an item";
+                listItems.forEach(item => item.style.display = 'block'); 
+                searchInput.focus();
+                return;
+            }
+
+            listItems.forEach(item => {
+                const text = item.querySelector('h4').textContent.toLowerCase();
+                
+                if (text.includes(query)) {
+                    item.style.display = 'block';
+                    matchCount++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            if (matchCount === 0) {
+                errorMessage.textContent = "not found";
+            }
+        });
+    }
+
+    // ==========================================
+    // 2. IMAGE GALLERY LIGHTBOX ENGINE
+    // ==========================================
+    const lightbox = document.getElementById('imageLightbox');
+    const expandedImage = document.getElementById('expandedImage');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    
+    const allImages = Array.from(document.querySelectorAll('.gallery-images-wrapper img'));
+    let currentIndex = 0;
+
+    function updateLightboxImage(index) {
+        if (index >= 0 && index < allImages.length) {
+            currentIndex = index;
+            expandedImage.src = allImages[currentIndex].src;
+            expandedImage.alt = allImages[currentIndex].alt;
+        }
+    }
+
+    allImages.forEach((img, index) => {
+        img.addEventListener('click', function() {
+            if (lightbox && expandedImage) {
+                lightbox.style.display = 'flex';
+                updateLightboxImage(index);
+            }
+        });
+    });
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            let nextIndex = currentIndex + 1;
+            if (nextIndex >= allImages.length) nextIndex = 0;
+            updateLightboxImage(nextIndex);
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            let prevIndex = currentIndex - 1;
+            if (prevIndex < 0) prevIndex = allImages.length - 1;
+            updateLightboxImage(prevIndex);
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+        });
+    }
+
+    if (lightbox) {
+        lightbox.addEventListener('click', function(event) {
+            if (event.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+    }
+});
 
     
 

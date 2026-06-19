@@ -25,40 +25,61 @@
     <section class="content">
         <section class="services">
   <div class="service-box">
-  </div>
+
+
+
+<h2>Our Service Gallery</h2>
+<h3>Click on any image to view it full screen</h3>
+
+<div class="search-container">
+    <form id="searchForm">
+        <input type="text" id="searchInput" placeholder="Search for a style (e.g., braids)...">
+        <button type="submit">Search</button>
+    </form>
+    <p id="errorMessage"></p>
+</div>
+
+<h2>Our service</h2>
+<h3>We offer neat, long lasting and quality hair braiding stylish for all hair types</h3>
+
+<section class="service-page">
+    
+    <div class="style-item service-grid">
+        <h4>knotless braids</h4>
+        <p>price=300 including hair wash</p>
+        <div class="gallery-images-wrapper">
+            <img src="./images/Darling1.webp" alt="knotless braids style 1">
+            <img src="./images/knotless adjusted.webp" alt="knotless braids style 2">
+            <img src="./images/2.jpg" alt="knotless braids style 3">
+        </div>
+    </div>
+
+    <div class="style-item service-grid">
+        <h4>Connrows</h4>
+        <p>Price=100 including wash</p>
+        <div class="gallery-images-wrapper">
+            <img src="./images/adjusted cornrow1.jpg" alt="cornrows freehand">
+            <img src="./images/Adjusted2.jpg" alt="cornrows side profile">
+            <img src="./images/3.jpg" alt="cornrows close up">
+            <img src="./images/2.jpg" alt="cornrows back view">
+        </div>
+    </div>
+
 </section>
 
-    <h2>Our service</h2>
-    <h3>We offer neat ,long lasting and quality hair braiding stylish for all hair types</h3>
-    <section class="service-page">
-        <div class="service-grid">
-            <img src="./images/braids 1.jpg" alt="knotless braids">
-            <img src="./images/braids 2.jpg" alt="knotless braids">
-            <img src="./images/braids4.jpg" alt="knotless braids">
-            <h4>knotless braids</h4>
-            <p>price=300 including hair wash</p>
-            </div>
-        </div>
-            <div class="Service card">
-                <img src="./images/freehand.jpg" alt="cornrows">
-                <img src="./images/cornrows 2.jpg" alt="cornrow">
-                <img src="./images/cornrows.jpg" alt="cornrow">
-                <img src="./images/cornrow 4.jpg" alt="cornrow">
-                <h4>Connrows</h4>
-                <p>Price=100 including wash</p>
-            </div>
-            </div>
-            <div class="Service card">
-                <img src="./images/Straight back1.jpg" alt="straight back">
-                <img src="./images/Straight back 6.jpg" alt="Straight back">
-                <img src="./images/braids 3.jpg" alt="Straight back">
-                <h4>Straight Back</h4>
-                <p>Price=250 including wash</p>
-                </div>
-            </div>
+<div id="imageLightbox" class="lightbox-overlay">
+    <span class="lightbox-close">&times;</span>
+    <button class="lightbox-arrow prev-btn" type="button">&#10094;</button>
+    <button class="lightbox-arrow next-btn" type="button">&#10095;</button>
+    <img class="lightbox-image" id="expandedImage" src="" alt="Enlarged view">
+</div>
 
-        </div>
-        </section>
+</section>
+  </div>
+
+
+
+
   <footer>
     <footer class="footer">
         <div class="footer-container">
