@@ -477,6 +477,46 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutLightbox = document.getElementById('aboutLightbox');
+    const aboutExpandedImage = document.getElementById('aboutExpandedImage');
+    const aboutImageCaption = document.getElementById('aboutImageCaption');
+    const aboutCloseBtn = document.querySelector('.about-lightbox-close');
+    
+    // Select the two specific about images
+    const aboutImages = document.querySelectorAll('.about-image');
+
+    // 1. Open the lightbox when clicking an about image
+    aboutImages.forEach(img => {
+        img.addEventListener('click', function() {
+            if (aboutLightbox && aboutExpandedImage) {
+                aboutLightbox.style.display = 'flex';
+                aboutExpandedImage.src = this.src;
+                
+                // Grabs the alt text ("inside Dimpho's Hair Salon") and sets it as the text caption
+                if (aboutImageCaption) {
+                    aboutImageCaption.textContent = this.alt;
+                }
+            }
+        });
+    });
+
+    // 2. Close via the 'X' button
+    if (aboutCloseBtn) {
+        aboutCloseBtn.addEventListener('click', function() {
+            aboutLightbox.style.display = 'none';
+        });
+    }
+
+    // 3. Close by clicking anywhere on the dark background
+    if (aboutLightbox) {
+        aboutLightbox.addEventListener('click', function(event) {
+            if (event.target === aboutLightbox) {
+                aboutLightbox.style.display = 'none';
+            }
+        });
+    }
+});
 
     
 
